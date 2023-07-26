@@ -15,6 +15,13 @@ connectDB();
 app.use(cors());
 app.use(express.json());
 
+//Custom Route
+app.get('/', (req, res) => {
+    res.json({
+        msg: 'API Working Successfully'
+    });
+})
+
 app.use("/api/goals", goalRouter);
 
 app.use("/api/user", userRouter);
